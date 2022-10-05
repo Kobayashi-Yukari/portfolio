@@ -36,3 +36,29 @@ Route::post('/letter/update', 'LetterController@update')->name('letter.update');
 Route::post('/letter/preview', 'LetterController@preview')->name('letter.preview');
 Route::get('/letter/store/{id}', 'LetterController@store')->name('letter.store');
 Route::get('/letter/clancel/{id}', 'LetterController@cancel')->name('letter.cancel');
+
+
+//チャット関連
+Route::get('/contact/index', 'ContactController@index')->name('contact.index');
+Route::post('/contact/store', 'ContactController@store')->name('contact.store');
+
+//member画面関連
+Route::get('/member/index', 'MemberController@index')->name('member.index');
+Route::get('/letter/flagChange/{id}', 'LetterController@flagChange')->name('letter.flagchange');
+
+//Admin画面関連
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+Route::get('/index', 'Admin\AdminController@index')->name('index');
+Route::post('/post/store', 'Admin\PostController@store')->name('post.store');
+Route::get('/post/edit/{id}', 'Admin\PostController@edit')->name('post.edit');
+Route::post('/post/update', 'Admin\PostController@update')->name('post.update');
+Route::get('/post/destroy/{id}', 'Admin\PostController@destroy')->name('post.destroy');
+
+//チャット関連
+Route::post('/contact/reply', 'Admin\ContactController@reply')->name('contact.reply');
+});
+
+
+
+
+
