@@ -59,7 +59,7 @@ margin-right: 10px;
 <!--非ログイン、ログイン者のメニュー-->
 {{--一般ユーザー--}}
 @auth
-@if (Auth::user()->permission_flag == 1)
+@if (Auth::user()->permission_flag == 0)
 <li><a href="{{ route('post.create') }}"><i class="fas fa-dove"> つぶやく</i></a></li>
 <li><a href="{{ route('post.index') }}"><i class="fas fa-list-alt"> みんなのつぶやき</i></a></li>
 <li><a href="{{ route('letter.create') }}"><i class="fas fa-envelope"> お手紙を書こう！</i></a></li>
