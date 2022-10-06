@@ -36,7 +36,8 @@ margin-left: 10px;
 @if($errors->has('member_id')) <span class="text-danger">{{ $errors->first('member_id') }}<br></span>@endif
 @foreach ($members as $index => $member)
 <ul style="list-style: none;">
-<li><input type="radio" name="member_id" value="{{ $index }}" @if(old('member_id') == $index) checked @endif> {{ $member }}</li>
+<li><img style="border-radius: 35%; height: 65px; width: 65px;" src="{{ asset('storage/avatars/' . '0' . $index . '.png') }}">
+<input type="radio" name="member_id" value="{{ $index }}" @if(old('member_id') == $index) checked @endif> {{ $member }}</li>
 </ul>
 @endforeach
 </div>
@@ -58,7 +59,7 @@ margin-left: 10px;
 <ul style="list-style: none;">
 <li><img style="border-radius: 35%; height: 65px; width: 65px;" src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}">
 <input type="radio" name="letter_avatar" value="1" checked @if(old('letter_avatar') == "1") checked @endif> 自分のアイコン</li><br>
-<li><img style="border-radius: 35%; height: 65px; width: 65px;" src="{{ asset('storage/avatars/' . 'default.png') }}">
+<li><img style="border-radius: 35%; height: 65px; width: 65px;" src="{{ asset('storage/avatars/' . '07.png') }}">
 <input type="radio" name="letter_avatar" value = "2" @if(old('letter_avatar') == "2") checked @endif> 匿名さま専用アイコン</li>
 </ul>
 </div>

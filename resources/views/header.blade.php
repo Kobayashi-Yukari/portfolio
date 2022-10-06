@@ -59,6 +59,37 @@ margin-right: 10px;
 <!--非ログイン、ログイン者のメニュー-->
 {{--一般ユーザー--}}
 @auth
+@if (Auth::user()->permission_flag == 1)
+<li><a href="{{ route('post.create') }}"><i class="fas fa-dove"> つぶやく</i></a></li>
+<li><a href="{{ route('post.index') }}"><i class="fas fa-list-alt"> みんなのつぶやき</i></a></li>
+<li><a href="{{ route('letter.create') }}"><i class="fas fa-envelope"> お手紙を書こう！</i></a></li>
+<li><a href="{{ route('user.index') }}"><i class="fas fa-kiwi-bird"> マイページ</i></a></li>
+<li><a href="{{ route('contact.index') }}"><i class="fas fa-comment-dots"> お問合せ</i></a></li>
+<li><a href="{{ route('logout') }}"
+onclick="event.preventDefault();
+document.getElementById('logout-form').submit();"><i class="fas fa-door-open"> ログアウト</i></a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+{{ csrf_field() }}
+</form>
+</li>
+
+{{--memberユーザー--}}
+@elseif (Auth::user()->permission_flag == 1)
+<li><a href="{{ route('post.create') }}"><i class="fas fa-dove"> つぶやく</i></a></li>
+<li><a href="{{ route('post.index') }}"><i class="fas fa-list-alt"> みんなのつぶやき</i></a></li>
+<li><a href="{{ route('user.index') }}"><i class="fas fa-kiwi-bird"> マイページ</i></a></li>
+<li><a href="{{ route('member.index') }}"><i class="fas fa-users"> メンバーページ</i></a></li>
+<li><a href="{{ route('contact.index') }}"><i class="fas fa-comment-dots"> お問合せ</i></a></li>
+<li><a href="{{ route('logout') }}"
+onclick="event.preventDefault();
+document.getElementById('logout-form').submit();"><i class="fas fa-door-open"> ログアウト</i></a>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+{{ csrf_field() }}
+</form>
+</li>
+
+{{--Adminrユーザー--}}
+@elseif (Auth::user()->permission_flag == 2)
 <li><a href="{{ route('post.create') }}"><i class="fas fa-dove"> つぶやく</i></a></li>
 <li><a href="{{ route('post.index') }}"><i class="fas fa-list-alt"> みんなのつぶやき</i></a></li>
 <li><a href="{{ route('letter.create') }}"><i class="fas fa-envelope"> お手紙を書こう！</i></a></li>
@@ -73,6 +104,7 @@ document.getElementById('logout-form').submit();"><i class="fas fa-door-open"> �
 {{ csrf_field() }}
 </form>
 </li>
+@endif
 @endauth
 </ul>
 </li>

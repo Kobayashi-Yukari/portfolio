@@ -1,6 +1,6 @@
 @extends('app')
-@extends('body')
 @section('content')
+@include('body')
 <style>
 h2 {
 font-size: 18px;
@@ -218,13 +218,17 @@ font-weight: bolder;
 <br>
 
 
+{{--関係者さま機能はuser(permission_flag=0以外のユーザのみ閲覧可能)--}}
+@if (Auth::user()->permission_flag !== 0)
 <h2>関係者さま機能</h2><br>
 <div class="sab"><i class="fas fa-users"> メンバーページ</i></div>
 <p>ファンからのお手紙が読めます。<br>
 お手紙は宛名の方のみ閲覧可能です。<p>
-<div class="sab"><i class="fas fa-paper-plane"> アンケート集計</i></div>
-<p>ファンの書いたアンケートを読むことができます。</p>
+@endif
 
+
+
+{{--下の機能は全てのユーザーが閲覧可能--}}
 <h2>ユーザー機能</h2><br>
 <div class="sab"><i class="fas fa-dove"> つぶやく</i></div>
 <p>
@@ -238,7 +242,6 @@ font-weight: bolder;
 <div style="font-weight: bold;">つぶやきの機能とは異なり、削除・編集はできません。</div>
 もし、削除希望の場合は管理人にまでご連絡をください。<br>
 </p>
-
 
 {{--ここまで取説↑--}}
 

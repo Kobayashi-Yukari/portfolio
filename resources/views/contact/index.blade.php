@@ -76,7 +76,7 @@ font-size: 10px;
 <tbody>
 @foreach ($contacts as $contact)
 <tr>
-@if (Auth::user()->flag == 0)
+@if (Auth::user()->permission_flag == 0)
 @if($contact->reply == null)
 <td><input class="radio" type="radio" name="contact_id" value="{{ $contact->id }}" required></td>
 @else
@@ -104,7 +104,7 @@ font-size: 10px;
 </table>
 <br>
 {{--管理人用返信フォーム--}}
-@if (Auth::user()->flag == 0)
+@if (Auth::user()->permission_flag == 0)
 <h1><i class="fas fa-comment-dots fa-2x"> 返信フォーム</i></h1><br>
 <p>お問い合わせ履歴にチェックを入れて、返信してね！</p>
 

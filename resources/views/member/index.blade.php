@@ -88,7 +88,12 @@ border-top: 1px solid #cccccc;
 </style>
 
 <div class="container">
-<div class="col-md-8">
+<div class="col-md-8 col-md-offset-2">
+<div class="panel panel-default">
+
+<div class="panel-body">
+
+
 
 <div class="cp_tab">
 <input type="radio" name="cp_tab" id="tab1_1" aria-controls="first_tab01" checked>
@@ -152,6 +157,8 @@ border-top: 1px solid #cccccc;
 </div>
 
 
+</div>
+</div>
 </div>
 </div>
 </div>
