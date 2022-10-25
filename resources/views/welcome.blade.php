@@ -145,13 +145,10 @@ font-size: 13px;
 
             <div class="content">
                 <div class="title m-b-md">
-                    M_CHANEL
+                    portfolio
                 </div>
 
-<p id="example">はじめまして、M_chanelの管理人Mです。<br>
-ここはムッカーである管理人『 M 』が運営するMUCC非公式サイトです。<br><br>
-</p>
-<a href="{{ route('login') }}" class="btn-flat-border">ログイン</a><br>
+<a href="{{ route('login') }}" class="btn-flat-border">ログイン画面へ</a><br>
 
 
 </div>

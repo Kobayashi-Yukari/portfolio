@@ -20,6 +20,7 @@ margin-left: 10px;
 
 
 </style>
+<body>
 <div class="container">
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
@@ -61,22 +62,22 @@ margin-left: 10px;
 <br>
 <table class="table table-bordered">
 <tr>
-<td>ユーザー名</td>
-<td>TESE_USER</td>
+<td>name</td>
+<td>USER</td>
 <td>MEMBER</td>
 <td>ADMIN</td>
 </tr>
 <tr>
-<td>メールアドレス</td>
-<td>user@gmail.com</td>
-<td>member@gmail.com</td>
-<td>admin@gmail.com</td>
+<td>email</td>
+<td>user@example.com</td>
+<td>member@example.com</td>
+<td>admin@example.com</td>
 </tr>
 <tr>
-<td>パスワード</td>
-<td>pokemon</td>
-<td>adminadmin</td>
-<td>adminadmin</td>
+<td>passward</td>
+<td>d2sjnVgyqqMZk4z2</td>
+<td>beCCQMFE6tU3YTx3</td>
+<td>63qx3KwVsngDTu9V</td>
 </tr>
 
 </table>
@@ -88,6 +89,9 @@ margin-left: 10px;
 </button>
 
 </body>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
